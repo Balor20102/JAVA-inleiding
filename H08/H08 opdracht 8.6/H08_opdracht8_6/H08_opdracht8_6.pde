@@ -4,7 +4,7 @@ background(255,255,255);
 int sizeC = 50;
 
 for(int i = 0; i < 5; i++){
-  ellipse(80,35,sizeC,sizeC);
+  ellipse(80- sizeC/2,35,sizeC,sizeC);
    println(sizeC);
   sizeC -=10;
 }
