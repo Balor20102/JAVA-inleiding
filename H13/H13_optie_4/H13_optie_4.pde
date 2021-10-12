@@ -1,3 +1,7 @@
+PImage schaar;
+PImage steen;
+PImage papier;
+
 import controlP5.*; 
 
 ControlP5 cp;
@@ -33,6 +37,9 @@ void setup(){
   knop3.setPosition(110,50);
   knop3.setSize(100,50);
   
+  schaar = loadImage("images/schaar.jpg");
+  steen = loadImage("images/steen.jpg");
+  papier = loadImage("images/papier");
 }
 
 void draw(){
@@ -43,21 +50,24 @@ void draw(){
 
 void RPS(){
   // het een waarde in string rps door de waarde van x
-if (x < 10){
+if (x <= 10){
   rps = "paper";
+  image(papier,0,0, 50,50);
   }
- if(x < 20 && x > 10){
+ if(x <= 20 && x > 10){
    rps = "rock";
+   image(steen,0,0, 50,50);
    }   
  if(x <= 30 && x > 20){
    rps = "scissors";
+   image(schaar,0,0, 50,50);
  }
 }
 
 void Knop1(){
   // roept RPS aan 
-  RPS();
   background(255,255,255);
+  RPS();
   // als x = 10, staat gelijk aan papier en knop 1 staat voor schaar.
   if( x < 10){
     fill(0,255,0);
@@ -85,8 +95,8 @@ void Knop1(){
 }
 
 void Knop2(){
-  RPS();
   background(255,255,255);
+  RPS();
   if( x < 10){
     fill(255,0,0);
     textSize(20);
@@ -109,8 +119,8 @@ void Knop2(){
    text("bot:" + rps, 250,200);
 }
 void Knop3(){
-  RPS();
   background(255,255,255);
+  RPS();
   if( x < 10){
     fill(0,0,0);
     textSize(20);
